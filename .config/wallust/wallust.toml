@@ -1,0 +1,14 @@
+# wallust v3.5
+backend = "fastresize"
+color_space = "salience"
+palette = "saliencedark"
+
+[templates]
+# Kitty colors
+kitty = { template = "kitty.conf", target = "~/.config/kitty/colors-wallust.conf" }
+# Alacritty colors
+alacritty = { template = "alacritty.toml", target = "~/.config/alacritty/colors-wallust.toml" }
+
+[hooks]
+# Recargar kitty al cambiar colores
+post = "kitty @ set-colors --all --configured ~/.config/kitty/colors-wallust.conf"
